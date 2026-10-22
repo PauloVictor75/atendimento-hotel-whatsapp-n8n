@@ -8,9 +8,19 @@ O hóspede pede fotos e disponibilidade para duas noites, o agente consulta a pl
 
 ![Conversa no WhatsApp](imagens/conversa-whatsapp.gif)
 
+> Projeto desenvolvido para um cliente e em uso no atendimento do hotel. Por isso o fluxo é apresentado apenas com prints, sem o arquivo de exportação do n8n e sem credenciais.
+
 ## Workflow principal
 
 ![Workflow principal](imagens/workflow-principal.png)
+
+**Entrada da mensagem:** webhook, controle de duplicidade e horário de atendimento.
+
+![Entrada da mensagem](imagens/workflow-entrada.png)
+
+**Agente de IA:** modelo, memória, ferramentas, envio da resposta e tratamento de falhas.
+
+![Agente de IA](imagens/workflow-agente.png)
 
 1. **Recebe a mensagem** do WhatsApp por webhook (Evolution API) e extrai o ID da mensagem.
 2. **Evita respostas duplicadas**: verifica no Redis se a mensagem já foi processada e, se não, marca o ID com validade de 5 minutos.
